@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developer Biography</title>
+  <link rel="icon" type="image/x-icon" href="Assets/jajaHeadshot.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Unbounded', cursive;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0a0a0a, #1b1b1b);
+      color: #f0e6f6;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffaaaa;
+    }
+
+    .bio {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #cfcfcf;
+      max-width: 700px;
+    }
+
+    .photos {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .photos img {
+      width: 180px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #ff020255;
+      border: 6px solid #0a0a0a;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: #ff6666;
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff9999;
+    }
+
+    footer {
+      margin-top: 5rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Meet the Devs</h1>
+    <p class="bio">
+      <strong>Walnut and Peanut</strong> (aka Azib and Akif) are two chaotic creatives who came together to make something beautiful from the dark. <br><br>
+      Our mission? Create games that are fun, scary, and exciting all of the same time.<br><br>
+      This project, <strong>A Slave’s Pilgrimage</strong>, is more than a game. It’s a memory, adventure, and madness woven together. Thanks for being part of the journey. ♡
+    </p>
+
+    <div class="photos">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="Assets/azib.jpg" alt="Azib">
+          <p style="margin-top: 0.5rem; font-size: 1rem; color: #bbbbbb;">Graphic Designer</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="Assets/akif.jpg" alt="Akif">
+          <p style="margin-top: 0.5rem; font-size: 1rem; color: #bbbbbb;">Lead Programmer</p>
+        </div>
+      </div>
+      
+
+    <a href="home.html" class="btn">Back to Homepage</a>
+    <a href="index.html" class="btn">Enter Game</a>
+  </div>
+
+  <footer>
+    <p style="margin-bottom: 0.3rem;">made with love and passion 💔</p>
+    <p style="font-size: 0.85rem; color: #666;">© 2025 Walnut & Peanut — blood and soul, no refunds.</p>
+  </footer>
+
+</body>
+</html>
