@@ -1318,16 +1318,6 @@ const dialogues = [
     typeText(line.text);
   }
 
-  buttonEl.addEventListener("click", () => {
-    if (isTyping) {
-      isTyping = false;
-      clearTimeout(typingTimeout);
-      const fullText = dialogues[currentIndex].text;
-      textEl.textContent = fullText;
-      buttonEl.disabled = false;
-      return;
-    }
-
     currentIndex++;
     if (currentIndex < dialogues.length) {
       showDialogue(currentIndex);
