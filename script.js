@@ -12,13 +12,13 @@ const bulletBox = document.getElementById("bulletBox");
 
 // Load images
 const backgroundImage = new Image();
-backgroundImage.src = "assets/walls.png";
+backgroundImage.src = "Assets/walls.png";
 
 const doorImage = new Image();
-doorImage.src = "assets/door.png";
+doorImage.src = "Assets/door.png";
 
 const darkness = new Image();
-darkness.src = "assets/darkness.png";
+darkness.src = "Assets/darkness.png";
 
 const FRAME_WIDTH = 512;
 const FRAME_HEIGHT = 512;
@@ -40,20 +40,20 @@ const animations = {
 const bossPowerups = [
     {
         name: "Chinese Takeout",
-        image: "assets/chineseTakeout.png",
-        icon: "assets/chineseTakeoutIcon.png",
+        image: "Assets/chineseTakeout.png",
+        icon: "Assets/chineseTakeoutIcon.png",
         action: "heal"
     },
     {
         name: "White Powder",
-        image: "assets/whitePowder.png",
-        icon: "assets/whitePowderIcon.png",
+        image: "Assets/whitePowder.png",
+        icon: "Assets/whitePowderIcon.png",
         action: "speed"
     },
     {
         name: "Cigarette Pack",
-        image: "assets/cigPack.png",
-        icon: "assets/cigPackIcon.png",
+        image: "Assets/cigPack.png",
+        icon: "Assets/cigPackIcon.png",
         action: "attack"
     }
 ];
@@ -183,7 +183,7 @@ const player = {
     damageCooldown: 1000
 };
 
-player.image.src = "assets/spritesheet.png"; // Make sure the file path is correct
+player.image.src = "Assets/spritesheet.png"; // Make sure the file path is correct
 
 const enemySprites = {
     eye: new Image(),
@@ -194,10 +194,10 @@ const enemySprites = {
     // Add more types here
 };
 
-enemySprites.eye.src = "assets/eye_Spritesheet.png";
-enemySprites.cat.src = "assets/cat_Spritesheet.png";
-enemySprites.meatman.src = "assets/meatman_Spritesheet.png";
-enemySprites.boss.src = "assets/boss.png";
+enemySprites.eye.src = "Assets/eye_Spritesheet.png";
+enemySprites.cat.src = "Assets/cat_Spritesheet.png";
+enemySprites.meatman.src = "Assets/meatman_Spritesheet.png";
+enemySprites.boss.src = "Assets/boss.png";
 
 const playerBullets = [];
 const enemyBullets = [];
@@ -212,34 +212,34 @@ let canShoot = true;
 let doorsLocked = false;
 const defeatedEnemies = {};
 const heartImage = new Image();
-heartImage.src = "assets/heart.png"; // Full heart image
+heartImage.src = "Assets/heart.png"; // Full heart image
 
 const halfHeartImage = new Image();
-halfHeartImage.src = "assets/halfheart.png"; // Half-heart image
+halfHeartImage.src = "Assets/halfheart.png"; // Half-heart image
 
 const emptyHeartImage = new Image();
-emptyHeartImage.src = "assets/emptyHeart.png"; // Half-heart image
+emptyHeartImage.src = "Assets/emptyHeart.png"; // Half-heart image
 
 const bulletImage = new Image();
-bulletImage.src = "assets/bullet.png"; 
+bulletImage.src = "Assets/bullet.png"; 
 
 const enemyBulletImageV1 = new Image();
-enemyBulletImageV1.src = "assets/enemyBullet.png";
+enemyBulletImageV1.src = "Assets/enemyBullet.png";
 
 const enemyBulletImageV2 = new Image();
-enemyBulletImageV2.src = "assets/enemyBulletV2.png";
+enemyBulletImageV2.src = "Assets/enemyBulletV2.png";
 
 const ENEMY_BULLET_DAMAGE_V1 = .5;   // or enemy.damage
 const ENEMY_BULLET_DAMAGE_V2 = .5;
 
-const audio = new Audio("assets/pistol.mp3");
-const catSpawnSound = new Audio("assets/catSpawn.mp3");
-const eyeSpawnSound = new Audio("assets/eyeSpawn.mp3");
-const meatmanSpawnSound = new Audio("assets/meatmanSpawn.mp3");
+const audio = new Audio("Assets/pistol.mp3");
+const catSpawnSound = new Audio("Assets/catSpawn.mp3");
+const eyeSpawnSound = new Audio("Assets/eyeSpawn.mp3");
+const meatmanSpawnSound = new Audio("Assets/meatmanSpawn.mp3");
 
-const catDeathSound = new Audio("assets/catDeath.mp3");
-const eyeDeathSound = new Audio("assets/eyeDeath.mp3");
-const meatmanDeathSound = new Audio("assets/meatmanDeath.mp3");
+const catDeathSound = new Audio("Assets/catDeath.mp3");
+const eyeDeathSound = new Audio("Assets/eyeDeath.mp3");
+const meatmanDeathSound = new Audio("Assets/meatmanDeath.mp3");
 const allEnemySounds = [catSpawnSound, eyeSpawnSound, meatmanSpawnSound];
 
 
@@ -333,7 +333,7 @@ window.addEventListener("keydown", (e) => {
     
             if (powerup.name === "Cat Paws") {
                 bulletBox.src = powerup.icon;
-                bulletImage.src = "assets/catBullet.png";
+                bulletImage.src = "Assets/catBullet.png";
                 cooldown += 200;
                 bulletDamage = 3;
             } else {
@@ -353,7 +353,7 @@ window.addEventListener("keydown", (e) => {
     
             if (bossPowerup.name === "Cat Paws") {
                 bulletBox.src = bossPowerup.icon;
-                bulletImage.src = "assets/catBullet.png";
+                bulletImage.src = "Assets/catBullet.png";
             } else {
                 hasPowerup = bossPowerup;
                 powerupBox.src = bossPowerup.icon;
@@ -369,20 +369,20 @@ window.addEventListener("keydown", (e) => {
             if (player.hp < player.maxHP) {
                 player.hp = Math.min(player.hp + 2, player.maxHP); // +1 heart
                 renderHearts();
-                powerupBox.src = "assets/powerUp.png";
+                powerupBox.src = "Assets/powerUp.png";
             } else {
             }
         }
 
         if (hasPowerup.action === "speed") {
             player.speed += 3; // Boost speed
-            powerupBox.src = "assets/powerUp.png";
+            powerupBox.src = "Assets/powerUp.png";
         }
 
         if (hasPowerup.action === "attack") {
             
             cooldown -= 100;
-            powerupBox.src = "assets/powerUp.png";
+            powerupBox.src = "Assets/powerUp.png";
         }
         
         hasPowerup = false;
@@ -550,22 +550,22 @@ const roomConfigs = {
 };
 
 const powerupImages = {
-    "assets/chineseTakeout.png": new Image(),
-    "assets/whitePowder.png": new Image(),
-    "assets/cigPack.png": new Image(),
-    "assets/catPaws.png": new Image()
+    "Assets/chineseTakeout.png": new Image(),
+    "Assets/whitePowder.png": new Image(),
+    "Assets/cigPack.png": new Image(),
+    "Assets/catPaws.png": new Image()
   };
   
-  powerupImages["assets/chineseTakeout.png"].src = "assets/chineseTakeout.png";
-  powerupImages["assets/whitePowder.png"].src = "assets/whitePowder.png";
-  powerupImages["assets/cigPack.png"].src = "assets/cigPack.png";
-  powerupImages["assets/catPaws.png"].src = "assets/catPaws.png";
+  powerupImages["Assets/chineseTakeout.png"].src = "Assets/chineseTakeout.png";
+  powerupImages["Assets/whitePowder.png"].src = "Assets/whitePowder.png";
+  powerupImages["Assets/cigPack.png"].src = "Assets/cigPack.png";
+  powerupImages["Assets/catPaws.png"].src = "Assets/catPaws.png";
   
   const powerupConfigs = {
     "2x1": {
       name: "Chinese Takeout",
-      image: "assets/chineseTakeout.png",
-      icon: "assets/chineseTakeoutIcon.png",
+      image: "Assets/chineseTakeout.png",
+      icon: "Assets/chineseTakeoutIcon.png",
       x: 250,
       y: 250,
       action: "heal",
@@ -573,8 +573,8 @@ const powerupImages = {
     },
     "1x0": {
       name: "White Powder",
-      image: "assets/whitePowder.png",
-      icon: "assets/whitePowderIcon.png",
+      image: "Assets/whitePowder.png",
+      icon: "Assets/whitePowderIcon.png",
       x: 300,
       y: 200,
       action: "speed",
@@ -582,8 +582,8 @@ const powerupImages = {
     },
     "4x-2": {
       name: "Cigarette Pack",
-      image: "assets/cigPack.png",
-      icon: "assets/cigPackIcon.png",
+      image: "Assets/cigPack.png",
+      icon: "Assets/cigPackIcon.png",
       x: 300,
       y: 200,
       action: "attack",
@@ -591,8 +591,8 @@ const powerupImages = {
     },
     "-1x2": {
       name: "Cat Paws",
-      image: "assets/catPaws.png",
-      icon: "assets/catBulletBox.png",
+      image: "Assets/catPaws.png",
+      icon: "Assets/catBulletBox.png",
       x: 300,
       y: 200,
       action: "cat",
@@ -600,8 +600,8 @@ const powerupImages = {
     },
     "0x-2": {
         name: "Cigarette Pack",
-        image: "assets/cigPack.png",
-        icon: "assets/cigPackIcon.png",
+        image: "Assets/cigPack.png",
+        icon: "Assets/cigPackIcon.png",
         x: 300,
         y: 200,
         action: "attack",
@@ -667,7 +667,7 @@ allEnemySounds.forEach(sound => {
     else if (direction === "top") currentY += 1;
     else if (direction === "bottom") currentY -= 1;
 
-    let newMap = `assets/x${currentX}y${currentY}.png`;
+    let newMap = `Assets/x${currentX}y${currentY}.png`;
 
     let slideX = 0, slideY = 0;
     if (direction === "right") slideX = -100;
@@ -1232,12 +1232,12 @@ function restartGame() {
 
     // Reset powerup effects
     hasPowerup = false;
-    powerupBox.src = "assets/powerUp.png";
-    bulletImage.src = "assets/bullet.png";
+    powerupBox.src = "Assets/powerUp.png";
+    bulletImage.src = "Assets/bullet.png";
     cooldown = 300;
 
     // Reset map image
-    map.src = `assets/x0y0.png`;
+    map.src = `Assets/x0y0.png`;
 
     // Load room + resume game
     loadEnemiesForRoom();
@@ -1259,22 +1259,22 @@ Promise.all([
 const dialogues = [
     {
       name: "Jaja",
-      avatar: "assets/jajaHeadshot.png",
+      avatar: "Assets/jajaHeadshot.png",
       text: "- Kanku berikan semua,"
     },
     {
       name: "Jaja",
-      avatar: "assets/jajaHeadshot.png",
+      avatar: "Assets/jajaHeadshot.png",
       text: "- Agar kau gembira sentiasa."
     },
     {
       name: "Jaja",
-      avatar: "assets/jajaHeadshot.png",
+      avatar: "Assets/jajaHeadshot.png",
       text: "Engkau tetap pergi..."
     },
     {
       name: "Jaja",
-      avatar: "assets/jajaHeadshot.png",
+      avatar: "Assets/jajaHeadshot.png",
       text: "Pergi meninggalkanku sendiri."
     }
   ];
